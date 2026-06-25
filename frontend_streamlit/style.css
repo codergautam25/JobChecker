@@ -1,0 +1,280 @@
+/* Import premium typography */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+/* Global application body and font settings */
+html, body, [class*="css"], .stApp {
+    font-family: 'Plus Jakarta Sans', 'Outfit', -apple-system, BlinkMacSystemFont, sans-serif !important;
+    background-color: #0b0c10 !important;
+    color: #e5e9f0 !important;
+}
+
+/* Glassmorphism card container styling */
+.glass-card {
+    background: rgba(30, 34, 42, 0.45);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-2px);
+    border-color: rgba(9, 132, 227, 0.4);
+}
+
+/* Vibrant gradients for badges and headers */
+.grad-text {
+    background: linear-gradient(135deg, #00cec9, #0984e3, #6c5ce7);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+}
+
+/* Match Percentage Pill colors */
+.pill {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-align: center;
+}
+
+.pill-high {
+    background-color: rgba(46, 204, 113, 0.15);
+    color: #2ecc71;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+}
+
+.pill-medium {
+    background-color: rgba(241, 196, 15, 0.15);
+    color: #f1c40f;
+    border: 1px solid rgba(241, 196, 15, 0.3);
+}
+
+.pill-low {
+    background-color: rgba(231, 76, 60, 0.15);
+    color: #e74c3c;
+    border: 1px solid rgba(231, 76, 60, 0.3);
+}
+
+/* Red/Green Skill Gap badges */
+.gap-badge {
+    display: inline-block;
+    background-color: rgba(231, 76, 60, 0.12) !important;
+    color: #ff6b6b !important;
+    padding: 3px 8px !important;
+    border-radius: 6px !important;
+    font-size: 0.8rem !important;
+    border: 1px solid rgba(231, 76, 60, 0.25) !important;
+    margin-right: 6px !important;
+    margin-bottom: 6px !important;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #0f1115;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #2e3440;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4c566a;
+}
+
+/* Custom design for Streamlit inputs and text fields */
+.stTextInput > div > div > input, .stTextArea > div > div > textarea {
+    background-color: #1a1e24 !important;
+    color: #e5e9f0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+}
+
+.stTextInput > div > div > input:focus, .stTextArea > div > div > textarea:focus {
+    border-color: #0984e3 !important;
+    box-shadow: 0 0 0 2px rgba(9, 132, 227, 0.2) !important;
+}
+
+/* Customizing buttons for visual excellence */
+button[kind="secondary"] {
+    background: linear-gradient(135deg, #1e222a, #2a2f3a) !important;
+    color: #e5e9f0 !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+    transition: all 0.2s ease !important;
+}
+
+button[kind="secondary"]:hover {
+    background: linear-gradient(135deg, #2a2f3a, #3b4252) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+button[kind="primary"] {
+    background: linear-gradient(135deg, #0984e3, #6c5ce7) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 14px 0 rgba(9, 132, 227, 0.3) !important;
+    transition: all 0.2s ease !important;
+}
+
+button[kind="primary"]:hover {
+    box-shadow: 0 6px 20px 0 rgba(9, 132, 227, 0.5) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* 📋 Kanban Board Headers */
+.kanban-header {
+    font-size: 0.95rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    padding: 8px 12px;
+    border-radius: 6px;
+    margin-bottom: 16px;
+    text-align: center;
+}
+
+.match-header { background: rgba(9, 132, 227, 0.15); color: #0984e3; border: 1px solid rgba(9, 132, 227, 0.2); }
+.apply-header { background: rgba(108, 92, 231, 0.15); color: #6c5ce7; border: 1px solid rgba(108, 92, 231, 0.2); }
+.interview-header { background: rgba(241, 196, 15, 0.15); color: #f1c40f; border: 1px solid rgba(241, 196, 15, 0.2); }
+.offer-header { background: rgba(46, 204, 113, 0.15); color: #2ecc71; border: 1px solid rgba(46, 204, 113, 0.2); }
+.reject-header { background: rgba(231, 76, 60, 0.15); color: #e74c3c; border: 1px solid rgba(231, 76, 60, 0.2); }
+
+/* 📋 Kanban Board Cards */
+.kanban-card {
+    background: rgba(30, 34, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.kanban-card:hover {
+    transform: scale(1.02);
+}
+
+.card-match { border-left: 3px solid #0984e3; }
+.card-apply { border-left: 3px solid #6c5ce7; }
+.card-interview { border-left: 3px solid #f1c40f; }
+.card-offer { border-left: 3px solid #2ecc71; }
+.card-reject { border-left: 3px solid #e74c3c; }
+
+/* 🤖 Chat Bubbles */
+.user-bubble {
+    background-color: rgba(9, 132, 227, 0.12) !important;
+    border: 1px solid rgba(9, 132, 227, 0.25) !important;
+    color: #e5e9f0 !important;
+    padding: 12px 16px !important;
+    border-radius: 16px 16px 4px 16px !important;
+    margin-bottom: 12px !important;
+    max-width: 80% !important;
+    margin-left: auto !important;
+    text-align: right !important;
+    font-size: 0.9rem !important;
+}
+
+.assistant-bubble {
+    background-color: rgba(30, 34, 42, 0.7) !important;
+    border: 1px solid rgba(255, 255, 255, 0.08) !important;
+    color: #e5e9f0 !important;
+    padding: 12px 16px !important;
+    border-radius: 16px 16px 16px 4px !important;
+    margin-bottom: 12px !important;
+    max-width: 80% !important;
+    margin-right: auto !important;
+    text-align: left !important;
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+}
+
+/* Sidebar Navigation Styling */
+div[data-testid="stSidebar"] div[data-testid="stWidgetLabel"] {
+    display: none !important;
+}
+
+div[data-testid="stSidebar"] div[role="radiogroup"] {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+    padding: 10px 0 !important;
+}
+
+/* Style individual radio labels to act as sidebar navigation buttons */
+div[data-testid="stSidebar"] div[role="radiogroup"] label {
+    background: rgba(30, 34, 42, 0.4) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 12px !important;
+    padding: 12px 16px !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: flex !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+
+/* Hide the radio input dots and the custom span role presentation circles */
+div[data-testid="stSidebar"] div[role="radiogroup"] label input[type="radio"],
+div[data-testid="stSidebar"] div[role="radiogroup"] label span[role="presentation"],
+div[data-testid="stSidebar"] div[role="radiogroup"] label div[data-testid="stRadioButton"] div,
+div[data-testid="stSidebar"] div[role="radiogroup"] label > div:first-child {
+    display: none !important;
+}
+
+/* Align and format navigation text */
+div[data-testid="stSidebar"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] {
+    margin-left: 0px !important;
+    padding: 0 !important;
+    width: 100% !important;
+}
+
+div[data-testid="stSidebar"] div[role="radiogroup"] label div[data-testid="stMarkdownContainer"] p {
+    font-family: 'Plus Jakarta Sans', 'Outfit', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 500 !important;
+    color: #e5e9f0 !important;
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    transition: color 0.3s ease !important;
+}
+
+/* Hover state */
+div[data-testid="stSidebar"] div[role="radiogroup"] label:hover {
+    background-color: rgba(9, 132, 227, 0.15) !important;
+    border-color: rgba(9, 132, 227, 0.4) !important;
+    transform: translateX(6px) !important;
+}
+
+div[data-testid="stSidebar"] div[role="radiogroup"] label:hover div[data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+}
+
+/* Selected state using CSS :has() */
+div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input[type="radio"]:checked) {
+    background: linear-gradient(135deg, rgba(9, 132, 227, 0.2), rgba(108, 92, 231, 0.2)) !important;
+    border-color: #0984e3 !important;
+    box-shadow: 0 4px 15px rgba(9, 132, 227, 0.2) !important;
+}
+
+div[data-testid="stSidebar"] div[role="radiogroup"] label:has(input[type="radio"]:checked) div[data-testid="stMarkdownContainer"] p {
+    color: #00cec9 !important;
+    font-weight: 600 !important;
+}
+

@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Intel Auto-Scraper",
+  "version": "1.0",
+  "description": "Scrapes LinkedIn feed posts and sends them to local agent API.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/feed/*", "*://linkedin.com/feed/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

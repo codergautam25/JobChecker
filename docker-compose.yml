@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: jobchecker_ollama
+    ports:
+      - "11434:11434"
+    volumes:
+      - ollama_storage:/root/.ollama
+    # If the user has an NVIDIA GPU, they can enable gpu integration:
+    # deploy:
+    #   resources:
+    #     reservations:
+    #       devices:
+    #         - driver: nvidia
+    #           count: all
+    #           capabilities: [gpu]
+
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: jobchecker_backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/app
+      - playwright_data:/root/.playwright_session
+    env_file:
+      - .env
+    depends_on:
+      - ollama
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: jobchecker_frontend
+    ports:
+      - "8501:8501"
+    volumes:
+      - .:/app
+    env_file:
+      - .env
+    depends_on:
+      - backend
+    restart: always
+
+volumes:
+  ollama_storage:
+  playwright_data:

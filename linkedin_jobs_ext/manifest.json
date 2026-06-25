@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "LinkedIn Jobs Scraper & Matcher",
+  "version": "1.0",
+  "description": "Scrapes LinkedIn jobs, matches descriptions against profile skills, and displays a custom visual banner.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "*://*.linkedin.com/*",
+    "http://localhost:8000/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.linkedin.com/jobs/*", "*://linkedin.com/jobs/*"],
+      "js": ["content.js"]
+    }
+  ]
+}

@@ -48,22 +48,22 @@ The system operates entirely locally on your machine using a modern, multi-tier 
 
 ```mermaid
 graph TD
-    subgraph Client Layer [Client Layer (Browser)]
-        FE[Next.js Frontend UI]
-        EXT_FEED[LinkedIn Feed Extension]
-        EXT_JOBS[LinkedIn Jobs Extension]
+    subgraph client_layer ["Client Layer (Browser)"]
+        FE["Next.js Frontend UI"]
+        EXT_FEED["LinkedIn Feed Extension"]
+        EXT_JOBS["LinkedIn Jobs Extension"]
     end
 
-    subgraph Backend Layer [Backend API Server]
-        API[FastAPI Server]
-        GRAPH[LangGraph Agent Engine]
-        SERVICES[Settings & DB Services]
+    subgraph backend_layer ["Backend API Server"]
+        API["FastAPI Server"]
+        GRAPH["LangGraph Agent Engine"]
+        SERVICES["Settings & DB Services"]
     end
 
-    subgraph Data & AI Services [Data & AI Services (Local)]
-        DB[(SQLite Relational DB)]
-        VDB[(ChromaDB Vector Store)]
-        OLLAMA[Ollama Offline LLM]
+    subgraph data_services ["Data & AI Services (Local)"]
+        DB[("SQLite Relational DB")]
+        VDB[("ChromaDB Vector Store")]
+        OLLAMA["Ollama Offline LLM"]
     end
 
     %% Client Connections
